@@ -1,0 +1,76 @@
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Quiz Page styling */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.quiz-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.quiz-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.choice-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.choice-btn:hover {
+  background-color: #45a049;
+}
+
+.choice-btn:active {
+  background-color: #39843b;
+  transform: translateY(2px);
+}

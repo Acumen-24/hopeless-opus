@@ -1,30 +1,29 @@
 import React, { useState } from "react";
 import BaseUrl from "./BaseUrl";
-import Navbar from "./components/Navbar"; // Import the Navbar component
-import HomePage from "./components/HomePage"; // Import the HomePage component
+import PlayGame from "./components/PlayGame"
 
 const StoryGame = () => {
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
   const [gameStarted, setGameStarted] = useState(false); // Track if the game has started
 
-  // const fetchStory = async (storyId) => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await fetch(`${BaseUrl}/api/story/${storyId}`);
-  //     const data = await response.json();
-  //     setStory(data);
-  //   } catch (error) {
-  //     console.error("Error fetching story:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const fetchStory = async (storyId) => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${BaseUrl}/api/story/${storyId}`);
+      const data = await response.json();
+      setStory(data);
+    } catch (error) {
+      console.error("Error fetching story:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Fetch the initial story when the game starts
   const startGame = () => {
     setGameStarted(true); // Set game as started
-    // fetchStory("0001");
+     fetchStory("0001");
   };
 
   const handleOptionClick = (nextStoryId) => {
@@ -43,7 +42,7 @@ const StoryGame = () => {
 
   if (loading) {
     // Render the HomePage component when loading
-    return <HomePage />;
+    return <PlayGame />;
   }
 
   return (
@@ -61,5 +60,5 @@ const StoryGame = () => {
     </div>
   );
 };
-
+    
 export default StoryGame;
