@@ -1,0 +1,14 @@
+.footer {
+    background-color: rgba(50, 50, 50, 0.7); /* Semi-transparent background color */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 24px 0; /* Equivalent to py-6 */
+    width: 100vw; /* Full width of the viewport */
+    position: relative; /* Set positioning context */
+    left: 50%; /* Shift the footer to the left */
+    right: 50%; /* Shift the footer to the right */
+    margin-left: -50vw; /* Pull it back to the left */
+    margin-right: -50vw; /* Pull it back to the right */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better visibility */
+  }
+  
+  
