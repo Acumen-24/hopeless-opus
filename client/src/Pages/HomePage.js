@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
     <div
-      className="min-h-screen w-full flex flex-col gap-10 items-center justify-center text-center p-4 bg-black text-gray-100 shadow-inner overflow-hidden"
+      className="w-full flex flex-col items-center justify-center text-center bg-black text-gray-100 shadow-inner overflow-hidden"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -30,7 +30,7 @@ export default function HomePage() {
     > <div  className="w-full items-center justify-center bg-custom-bg bg-no-repeat ">
       <BubbleRevealText />
       <div className="flex items-center">
-      <p className="pb-80 pr-40 pl-40 pt-20">
+      <p className="lg:pb-40 pb-5 lg:px-40 px-5 lg:pt-20 pt-5">
       <CaptionHp />
       </p>
       </div>

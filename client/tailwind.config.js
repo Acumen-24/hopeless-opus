@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-bg': "url('/src/Resources/Landingbg.svg')"
+        'custom-bg': "url('/src/Resources/Landingbgbubble.svg')"
       },
       fontFamily: {
-        spookyman: ['Spookyman','sans-serif'],
+        guerrilla: ['ProtestGuerrilla','sans-serif'],
       },
       keyframes: {
         fadeIn: {
@@ -18,8 +18,8 @@ module.exports = {
           '100%': { opacity: '1' },
         },
       },
-      animation: {
-        'fade-in': 'fadeIn 1.5s ease-in-out',
+      boxShadow: {
+        'text-shadow': '5px 5px 15px rgba(0,0,0,0.5)',
       },
     },
   },
