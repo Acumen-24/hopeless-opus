@@ -50,7 +50,7 @@ const Footer = () => {
           </button>
         </div>
         <div
-          className="flex justify-center mb-4"
+          className="flex justify-center gap-4 lg:gap-16 mb-4 "
           style={{
             display: 'flex', // Flex for link buttons
             gap: '', // Gap between buttons

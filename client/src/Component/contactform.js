@@ -43,22 +43,27 @@ const ContactForm = () => {
             message: ''
         });
     };
-
     return (
         <div className="min-h-screen flex items-center justify-center relative p-4 bg-black">
-            <div className="flex max-w-5xl w-full -space-x-36 gap-16">
-                <img src="https://res.cloudinary.com/diswj8gya/image/upload/v1728568179/globe_rbbnjv.png" alt="Globe" className="w-[40%] h-full object-cover rounded-l-lg mr-40 my-auto" />
-
-                <div className="max-w-xl mx-10 p-8 bg-black shadow-lg rounded-lg">
+            <div className="flex flex-col md:flex-row max-w-5xl w-full gap-16 items-center">
+                {/* Image Section */}
+                <img 
+                    src="https://res.cloudinary.com/diswj8gya/image/upload/v1728568179/globe_rbbnjv.png" 
+                    alt="Globe" 
+                    className="w-full h-auto object-cover rounded-lg sm:mb-8 md:w-[40%] md:h-full"
+                />
+    
+                {/* Form Section */}
+                <div className="max-w-xl mx-10 p-8 bg-black shadow-lg rounded-lg sm:w-full">
                     <h2 className="text-4xl font-bold text-white mb-4 text-left">
                         Get In <span className="text-red-800">Touch</span>
                     </h2>
                     <p className="text-gray-400 mb-8 text-left">
                         Have any questions or issues that you want to bring to our attention? Feel free to drop us a message here, and we'll get back to you ASAP.
                     </p>
-
+    
                     {formStatus && <p className="text-green-500 mb-4">{formStatus}</p>}
-
+    
                     <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                         <div>
                             <input
@@ -71,7 +76,7 @@ const ContactForm = () => {
                                 required
                             />
                         </div>
-
+    
                         <div>
                             <input
                                 type="text"
@@ -83,7 +88,7 @@ const ContactForm = () => {
                                 required
                             />
                         </div>
-
+    
                         <div>
                             <textarea
                                 name="message"
@@ -95,19 +100,20 @@ const ContactForm = () => {
                                 required
                             />
                         </div>
-
+    
                         <button
                             type="submit"
                             className="w-full py-4 font-bold rounded-lg border-2 border-gray-700 bg-white/10 text-gray-100 cursor-pointer transition-all ease-in-out duration-300 backdrop-blur-md hover:bg-sky-400 hover:text-gray-900 hover:shadow-[0_0_25px_rgba(56,189,248,0.7)] hover:scale-105"
                         >
                             Get in Touch
                         </button>
-
+    
                     </form>
                 </div>
             </div>
         </div>
     );
+    
 };
 
 export default ContactForm;
