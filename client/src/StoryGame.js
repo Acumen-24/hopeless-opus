@@ -14,6 +14,10 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12";//minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13";//minigame13
+import Minigame14 from "./Minigames/Minigame14/Minigame14";//minigame14
+import Minigame15 from "./Minigames/Minigame15/Minigame15";
+import Minigame16 from "./Minigames/Minigame16/Minigame16";
+
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -500,17 +504,22 @@ const StoryGame = () => {
         story && (<>
           <div className="text-end h-[100vh]">
               {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)}
-              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
+              {false && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} className="" />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===6 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
               {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
               {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
               {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
               {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
               {gameDialogue && gameNo===11 && (<Minigame11 />)}
-
+              {false && (<Minigame12 />)}
+              {false && (<Minigame13 />)}
+              {false && (<Minigame14 />)} 
+              {false && (<Minigame15 />)}
+              {false && (<Minigame16 />)}
+              
               <div 
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
