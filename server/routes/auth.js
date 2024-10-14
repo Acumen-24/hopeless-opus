@@ -6,7 +6,6 @@ const authMiddleware = require("../middleware/authMiddleware"); // Adjust the pa
 
 const router = express.Router();
 
-// Registration Route
 router.post("/register", async (req, res) => {
   const {
     teamId,
@@ -32,13 +31,18 @@ router.post("/register", async (req, res) => {
   }
 
   try {
-    // Check if the user already exists
+    // Check if the team leader or player 2 already exists
     const existingUser = await User.findOne({
-      "teamLeader.email": teamLeader_email,
+      $or: [
+        { "teamLeader.delegateId": teamLeader_delegateId },
+        { "player2.delegateId": player2_delegateId },
+      ],
     });
 
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+      return res
+        .status(400)
+        .json({ message: "User with this delegate ID already exists" });
     }
 
     // Create a new user object
@@ -73,8 +77,9 @@ router.post("/register", async (req, res) => {
       { expiresIn: "1h" } // Token expiration time
     );
 
-    res.json({ message: "User registered successfully", token });
+    res.status(201).json({ message: "User registered successfully", token });
   } catch (err) {
+    console.error(err); // Log the error for debugging
     res.status(500).json({ error: err.message });
   }
 });
