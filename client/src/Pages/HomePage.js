@@ -11,6 +11,7 @@ import CaptionHp from "../Component/HomeCaption.js";
 import Footer from "../Component/Footer";
 import Minigame13 from "../Minigames/Minigame13/Minigame13.js";
 
+
 export default function HomePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(localStorage.getItem("token"));
@@ -39,7 +40,7 @@ export default function HomePage() {
       </div>
       <Countdown />
       <Scroll />
-      {/* <CardSlider /> */}
+      <CardSlider />
       <FAQ />
       <GallerySection />
       <ContactForm />
