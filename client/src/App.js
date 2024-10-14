@@ -11,6 +11,7 @@ import Info from "./Component/Info.js";
 import StoryError from "./Component/StoryError.js";
 import Contact from "./Component/contactform.js";
 import PlayParallax from "./Component/PlayParallax.js";
+import LandingAnimation from "./Component/LandingAnimation.js";
 function App() {
   const [data, setData] = useState("");
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/storyerror" element={<StoryError />} />
           <Route path="/playparallax" element={<PlayParallax />} />
+          <Route path="/landinganimation" element={<LandingAnimation />} />
         </Routes>
       </Router>
 
