@@ -14,6 +14,7 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
+import Minigame16 from "./Minigames/Minigame16/Minigame16";
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -665,6 +666,19 @@ const StoryGame = () => {
                   <Minigame10 gameResult={handleMiniGameTenResult} />
                 </div>
               )}
+              {true && gameNo === 16 && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "115%",
+                  }}
+                >
+                  <Minigame16 gameResult={handleMiniGameResult} />
+                </div>
+              )}
+            </div>
               {gameDialogue && gameNo === 11 && <Minigame11 />}
               <div
                 style={{
@@ -695,7 +709,6 @@ const StoryGame = () => {
                 <p>Minigame8 pts: {minigameEightPoints}</p>
                 <p>Minigame9 pts: {minigameNinePoints}</p>
               </div>
-            </div>
 
             <div className="mb-5">
               {snippetIndex === story.snippet.length - 1 && (

@@ -1,0 +1,74 @@
+/* Search.css */
+
+/* Container for the entire game */
+.w-full {
+    width: 100%;
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* Container for the game area */
+  .relative {
+    position: relative;
+  }
+  
+  
+  .cursor-default {
+    cursor: default;
+  }
+  
+  /* Emoji container grid */
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .emoji-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 3rem; /* Adjust emoji cell height */
+    width: 3rem; /* Adjust emoji cell width */
+    font-size: 2rem; /* Emoji size */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .emoji-item:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mask for the radial gradient effect */
+  .absolute {
+    position: absolute;
+  }
+  
+  .inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .backdropFilter {
+    backdrop-filter: blur(10px) saturate(700%);
+  }
+  
+  .transition {
+    transition: mask-position 120ms ease-out;
+  }
+  
+  /* Smooth mouse move effect */
+  @media (hover: hover) {
+    .emoji-item:hover {
+      transform: scale(1.4);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+  
+  
