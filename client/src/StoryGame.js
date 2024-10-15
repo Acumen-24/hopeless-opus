@@ -14,6 +14,11 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
+import Minigame14 from "./Minigames/Minigame14/Minigame14";
+import Minigame15 from "./Minigames/Minigame15/Minigame15";
+import Minigame16 from "./Minigames/Minigame16/Minigame16";
+import Game from "./Minigames/Minigame18/Game";
+
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -446,8 +451,13 @@ const StoryGame = () => {
         const inv = inventory;
         
         if(gameDialogue && gameNo===6){
-          if(minigameSixWon) updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
-          else updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          if(minigameSixWon){
+            fetchStory('0703');
+             updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('0704');
+             updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
         }
       }
 
@@ -616,6 +626,22 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 5 && (
                 <WhackaWolf gameResult={handleMiniGameFiveResult} />
               )}
+              {gameDialogue && gameNo === 12 && (
+                <Minigame12 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue&& gameNo === 13 && (
+                <Minigame13 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue&& gameNo === 14 && (
+                <Minigame14 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue && gameNo === 15 && (
+                <Minigame15 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue && gameNo===16 && (
+                <Minigame16 gameResult={handleMiniGameOneResult} />
+              )}
+              
               {gameDialogue && gameNo===6 &&(
                 <div
                   style={{
@@ -661,6 +687,11 @@ const StoryGame = () => {
                 </div>
               )}
               {gameDialogue && gameNo === 11 && <Minigame11 />}
+
+              {gameDialogue && (
+                <Game />  
+              )}
+
               <div
                 style={{
                   backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -670,7 +701,9 @@ const StoryGame = () => {
                 }}
                 className="absolute top-24 right-0"
               >
-                <p>Points: {points}</p>
+                
+                
+                {/* <p>Points: {points}</p>
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>
                 <p>Risk Factor: {rf}</p>
@@ -688,7 +721,7 @@ const StoryGame = () => {
                 <p>Minigame6 pts: {minigameSixPoints}</p>
                 <p>Minigame7 pts: {minigameSevenPoints}</p>
                 <p>Minigame8 pts: {minigameEightPoints}</p>
-                <p>Minigame9 pts: {minigameNinePoints}</p>
+                <p>Minigame9 pts: {minigameNinePoints}</p> */}
               </div>
             </div>
 
