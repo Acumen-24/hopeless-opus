@@ -18,8 +18,8 @@ import Minigame14 from "./Minigames/Minigame14/Minigame14";
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
 import Game from "./Minigames/Minigame18/Game";
-
-
+import ImageHoverEffect from "./Component/ImageHoverEffect";
+<ImageHoverEffect />;
 const StoryGame = () => {
   const nav = useNavigate();
   const [story, setStory] = useState(null);
@@ -449,15 +449,29 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===6){
-          if(minigameSixWon){
-            fetchStory('0703');
-             updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
-          } else{
-            fetchStory('0704');
-             updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
-          } 
+
+        if (gameDialogue && gameNo === 6) {
+          if (minigameSixWon) {
+            fetchStory("0703");
+            updateCurrentStoryIdAndPoints(
+              "0703",
+              updatedPoints,
+              updatedHealth,
+              updatedMoney,
+              updatedRF,
+              inv
+            ); // Update the story ID and points in the backend
+          } else {
+            fetchStory("0704");
+            updateCurrentStoryIdAndPoints(
+              "0704",
+              updatedPoints,
+              updatedHealth,
+              updatedMoney,
+              updatedRF,
+              inv
+            ); // Update the story ID and points in the backend
+          }
         }
       }
 
@@ -629,20 +643,19 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 12 && (
                 <Minigame12 gameResult={handleMiniGameOneResult} />
               )}
-              {gameDialogue&& gameNo === 13 && (
+              {gameDialogue && gameNo === 13 && (
                 <Minigame13 gameResult={handleMiniGameOneResult} />
               )}
-              {gameDialogue&& gameNo === 14 && (
+              {gameDialogue && gameNo === 14 && (
                 <Minigame14 gameResult={handleMiniGameOneResult} />
               )}
               {gameDialogue && gameNo === 15 && (
                 <Minigame15 gameResult={handleMiniGameOneResult} />
               )}
-              {gameDialogue && gameNo===16 && (
+              {gameDialogue && gameNo === 16 && (
                 <Minigame16 gameResult={handleMiniGameOneResult} />
               )}
-              
-              {gameDialogue && gameNo===6 &&(
+              {gameDialogue && gameNo === 6 && (
                 <div
                   style={{
                     display: "flex",
@@ -687,11 +700,7 @@ const StoryGame = () => {
                 </div>
               )}
               {gameDialogue && gameNo === 11 && <Minigame11 />}
-
-              {gameDialogue && (
-                <Game />  
-              )}
-
+              {gameDialogue && <Game />}
               <div
                 style={{
                   backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -701,8 +710,6 @@ const StoryGame = () => {
                 }}
                 className="absolute top-24 right-0"
               >
-                
-                
                 {/* <p>Points: {points}</p>
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>

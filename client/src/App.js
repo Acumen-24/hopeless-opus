@@ -11,7 +11,7 @@ import Info from './Component/Info.js'
 import StoryError from './Component/StoryError.js'
 import Contact from './Component/contactform.js'
 import Leaderboard from './Pages/Leaderboard.js'
-
+import Parallax from './Component/PlayParallax.js'
 import LandingAnimation from "./Component/LandingAnimation.js";
 function App() {
   const [data, setData] = useState('')
@@ -30,7 +30,7 @@ function App() {
         <div className="h-28 bg-black"></div>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/play" element={<Play />} />
+          <Route path="/play" element={<Parallax />} />
           <Route path="/about" element={<Info />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
@@ -38,7 +38,7 @@ function App() {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/storyerror" element={<StoryError />} />
-          <Route path="/playparallax" element={<PlayParallax />} />
+          <Route path="/start" element={<StoryGame />} />
           <Route path="/landinganimation" element={<LandingAnimation />} />
         </Routes>
       </Router>

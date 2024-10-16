@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ImageHoverEffect.css';
 import yourButton from '../Resources/mapicon.png';
 import customCursor from '../Resources/56697.png'; // Path to your custom cursor image
-
+import map from "../Resources//WhatsApp Image 2024-10-15 at 18.01.17_43ea9f4c.jpg";
 const ImageHoverEffect = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false); // State to track image visibility
@@ -80,7 +80,7 @@ const ImageHoverEffect = () => {
           }}
         >
           <img
-            src= "https://res.cloudinary.com/diswj8gya/image/upload/v1728569079/map_tacmtr.jpg"
+            src= {map}
             alt="Hover Effect"
             style={imageStyle}
             className="image-fade-in"
