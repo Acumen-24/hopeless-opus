@@ -5,7 +5,7 @@ const HammerGame = ({ gameResult }) => {
 
     // Initial states
     const initialGuesses = 5;
-    const initialMessage = "Guess where the hammer is!";
+    const initialMessage = "Guess where the hammer is!!";
 
     const [grid, setGrid] = useState(initialGrid); // 3x3 grid
     const [hammerPosition, setHammerPosition] = useState({ row: -1, col: -1 });
